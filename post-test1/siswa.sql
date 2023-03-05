@@ -1,17 +1,17 @@
-create table siswa
+CREATE TABLE siswa
 (
-    id_siswa      int         not null primary key,
-    nama_siswa    varchar(50) not null,
-    alamat_siswa  varchar(50) not null,
-    tanggal_lahir date        not null,
-    jenis_kelamin varchar(50) not null,
-    id_kelas      int         not null
+    id_siswa      INT PRIMARY KEY NOT NULL,
+    nama_siswa    VARCHAR(50)     NOT NULL,
+    alamat_siswa  VARCHAR(50)     NOT NULL,
+    tanggal_lahir DATE            NOT NULL,
+    jenis_kelamin VARCHAR(50)     NOT NULL,
+    id_kelas      INT             NOT NULL
 );
 
-alter table siswa
-    add foreign key (id_kelas) references kelas (id_kelas);
+ALTER TABLE siswa
+    ADD FOREIGN KEY (id_kelas) REFERENCES kelas (id_kelas);
 
-desc siswa;
+DESC siswa;
 
 insert into siswa (id_siswa, nama_siswa, alamat_siswa, tanggal_lahir, jenis_kelamin, id_kelas)
 values (3000, 'Muhammad Fauzan Gifari', 'Jl. Juanda 4', '2004-02-09', 'Laki-laki', 1004),
@@ -23,5 +23,5 @@ values (3000, 'Muhammad Fauzan Gifari', 'Jl. Juanda 4', '2004-02-09', 'Laki-laki
        (3006, 'Minami Hamabe', 'Jl. Juanda 2', '2006-11-19', 'Perempuan', 1000),
        (3007, 'Uesaka Sumire', 'Jl. Kadrie Oening', '2006-10-10', 'Perempuan', 1000);
 
-select *
-from siswa;
+
+SELECT * FROM siswa;

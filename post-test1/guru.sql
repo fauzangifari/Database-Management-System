@@ -1,26 +1,25 @@
-show tables;
-CREATE table guru
+SHOW TABLES ;
+CREATE TABLE guru
 (
-    id_guru            int primary key not null,
-    nama_guru          varchar(50)     not null,
-    alamat_guru        varchar(50)     not null,
-    tanggal_lahir_guru date            not null,
-    jenis_kelamin      varchar(50)     not null,
-    id_kelas           int             not null
+    id_guru            INT PRIMARY KEY NOT NULL ,
+    nama_guru          VARCHAR(50)     NOT NULL ,
+    alamat_guru        VARCHAR(50)     NOT NULL ,
+    tanggal_lahir_guru DATE            NOT NULL ,
+    jenis_kelamin      VARCHAR(50)     NOT NULL ,
+    id_kelas           INT             NOT NULL
 );
 
-desc guru;
+DESC guru;
 
-insert into guru
-values (1000, 'Abdul Tedjo', 'Jl. Kebon Mangga', '1990-11-23', 'Laki-laki', 2000),
+INSERT INTO guru (id_guru, nama_guru, alamat_guru, tanggal_lahir_guru, jenis_kelamin, id_kelas)
+VALUES (1000, 'Abdul Tedjo', 'Jl. Kebon Mangga', '1990-11-23', 'Laki-laki', 2000),
        (1001, 'Sakura Haruno', 'Jl. Antasari', '1990-09-18', 'Perempuan', 2001),
        (1002, 'Rudy Tabuti', 'Jl. Juanda', '1990-12-16', 'Laki-laki', 2002),
        (1003, 'Hinata Hyuga', 'Jl. Sirad Salman', '1989-02-01', 'Perempuan', 2003),
        (1004, 'Uzumaki Naruto', 'Jl. KS. Tubun', '1990-03-07', 'Laki-laki', 2004),
        (1005, 'Sri Megawati', 'Jl. Pahlawan', '1991-05-02', 'Perempuan', 2005);
 
-alter table guru
-    add foreign key (id_kelas) references kelas (id_kelas);
+ALTER TABLE guru
+    ADD FOREIGN KEY (id_kelas) REFERENCES kelas (id_kelas);
 
-select *
-from guru;
+SELECT * FROM guru;
